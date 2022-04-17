@@ -36,8 +36,12 @@
 {% if single_product.stock <= 0 %}
 <h5 class=text-danger>Out of Stock</h5>
 {% else %}
+  {% if user.is_authenticated %}
 <button type="submit" class="btn  btn-primary"> <span class="text">Add to cart</span> <i class="fas fa-shopping-cart"></i>
   </button>
+  {% else %}
+  <h4>Login into your account to add services to cart</h4>
+  {% endif %}
 {% endif %}
 
 </article> <!-- product-info-aside .// -->

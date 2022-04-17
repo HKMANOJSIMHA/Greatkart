@@ -6,6 +6,7 @@ class CartAdmin(admin.ModelAdmin):
 
 class CartItemAdmin(admin.ModelAdmin):
     list_display=('product','cart','quantity','is_active')
+    list_filter=('user','product')
 
 admin.site.register(Cart,CartAdmin)
 admin.site.register(CartItem,CartItemAdmin) # Register your models here.
