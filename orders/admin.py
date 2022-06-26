@@ -17,8 +17,11 @@ class OrderProductAdmin(admin.ModelAdmin):
     search_fields=['order','user','product']
     list_per_page=30
 
+class PaymentAdmin(admin.ModelAdmin):
+    list_display=['payment_id','payment_method','amount_paid','status']
+    readonly_fields=('payment_id','payment_method','amount_paid','status')
 admin.site.register(Order,orderAdmin)
-admin.site.register(Payment)
+admin.site.register(Payment,PaymentAdmin)
 admin.site.register(OrderProduct,OrderProductAdmin)
 
 # Register your models here.

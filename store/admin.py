@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product
+from .models import Product,ReviewRating
 class ProductAdmin(admin.ModelAdmin):
     list_display=('product_name','Price','stock','category','modified_date','is_available')
     prepopulated_fields={'slug':('product_name',)}
@@ -9,3 +9,4 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Product,ProductAdmin)
+admin.site.register(ReviewRating)
